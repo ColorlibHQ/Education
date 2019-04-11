@@ -1,0 +1,6 @@
+[submodule "epsilon-theme-dashboard"]
+	path = epsilon-theme-dashboard
+	url = https://github.com/MachoThemes/epsilon-theme-dashboard
+[submodule "epsilon-framework"]
+	path = epsilon-framework
+	url = https://github.com/MachoThemes/epsilon-framework
