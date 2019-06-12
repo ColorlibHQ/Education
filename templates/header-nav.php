@@ -49,7 +49,7 @@
                     $args = array(
                         'theme_location' => 'primary-menu',
                         'container'      => '',
-                        'depth'          => 2,
+                        'depth'          => 3,
                         'menu_class'     => 'nav-menu sf-js-enabled sf-arrows',
                         'fallback_cb'    => 'education_bootstrap_navwalker::fallback',
                         'walker'         => new education_bootstrap_navwalker(),

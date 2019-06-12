@@ -257,19 +257,30 @@ function event_organiser_metabox_markup($post) {
 }
 
 
-function event_date_save_postdata($post_id)
-{
-	update_post_meta( $post_id, 'event_start_input_meta', $_POST['event_start'] );
-    update_post_meta( $post_id, 'event_end_input_meta', $_POST['event_end'] );
-    update_post_meta( $post_id, 'event_price_meta', $_POST['event_price'] );
+function event_date_save_postdata( $post_id ){
+    $event_start  = !empty( $_POST['event_start'] ) ? $_POST['event_start'] : '';
+    $event_end  = !empty( $_POST['event_end'] ) ? $_POST['event_end'] : '';
+    $event_price  = !empty( $_POST['event_price'] ) ? $_POST['event_price'] : '';
+    update_post_meta( $post_id, 'event_start_input_meta', $event_start );
+    update_post_meta( $post_id, 'event_end_input_meta', $event_end );
+    update_post_meta( $post_id, 'event_price_meta', $event_price );
     
-	update_post_meta( $post_id, 'event_place_meta', $_POST['event_place'] );
-	update_post_meta( $post_id, 'event_street_meta', $_POST['event_street'] );
-    update_post_meta( $post_id, 'event_city_meta', $_POST['event_city'] );
+
+    $event_place  = !empty( $_POST['event_place'] ) ? $_POST['event_place'] : '';
+    $event_street = !empty( $_POST['event_street'] ) ? $_POST['event_street'] : '';
+    $event_city   = !empty( $_POST['event_city'] ) ? $_POST['event_city'] : '';
+	update_post_meta( $post_id, 'event_place_meta', $event_place );
+	update_post_meta( $post_id, 'event_street_meta', $event_street );
+    update_post_meta( $post_id, 'event_city_meta', $event_city );
     
-	update_post_meta( $post_id, 'organiser_com_meta', $_POST['organiser_com'] );
-	update_post_meta( $post_id, 'org_street_meta', $_POST['org_street'] );
-	update_post_meta( $post_id, 'org_city_meta', $_POST['org_city'] );
+
+    $organiser_com = !empty( $_POST['organiser_com'] ) ? $_POST['organiser_com'] : '';
+    $org_street = !empty( $_POST['org_street'] ) ? $_POST['org_street'] : '';
+    $orgCity = !empty( $_POST['org_city'] ) ? $_POST['org_city'] : '';
+
+    update_post_meta( $post_id, 'organiser_com_meta', $organiser_com );
+    update_post_meta( $post_id, 'org_street_meta', $org_street );
+	update_post_meta( $post_id, 'org_city_meta', $orgCity );
 }
 add_action('save_post', 'event_date_save_postdata');
 // End Meta For YouTube Video link =======================

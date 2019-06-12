@@ -269,6 +269,12 @@ if( ! function_exists( 'education_blog_posts_bottom_meta_cb' ) ) {
 			}
 			?>
 			<p class="comments col-lg-12 col-md-12 col-6"><?php echo education_posted_comments(); ?></p>
+			<?php
+			// Social Share Icons
+			if( education_opt( 'education-blog-social-share-toggle' ) && function_exists( 'education_social_sharing_buttons' ) ) {
+				echo '<div class="social-links col-lg-12 col-md-12 col-6">'.education_social_sharing_buttons().'</div>';
+			}
+			?>
 
 
 
@@ -503,8 +509,16 @@ if( ! function_exists( 'education_fof_cb' ) ) {
 // Featured Post
 if( ! function_exists( 'education_featured_post_cb' ) ) {
 	function education_featured_post_cb() {
-		$postID       = education_opt( 'education_featured_post' );
-		$featuredPost = new WP_Query( array( 'p' => $postID, 'post_type' => 'post' ) );
+		$featured_ID  = education_opt( 'education_featured_post' );
+		$postsID = get_posts(array(
+			'fields'          => 'ids', // Only get post IDs
+			'posts_per_page'  => -1
+		));
+		
+		$search_ID = in_array( $featured_ID, $postsID );
+		$featuredPostID = $search_ID === true ? $featured_ID : 1;
+
+		$featuredPost = new WP_Query( array( 'p' => $featuredPostID, 'post_type' => 'post' ) );
 		if ( $featuredPost->have_posts() ) {
 			while ( $featuredPost->have_posts() ) {
 				$featuredPost->the_post();

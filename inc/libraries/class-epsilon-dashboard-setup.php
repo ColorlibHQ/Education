@@ -241,10 +241,6 @@ class Epsilon_Dashboard_Setup {
 				'integration' => true,
 				'recommended' => false,
 			),
-			'education' => array(
-				'integration' => true,
-				'recommended' => false,
-			),
 			'elementor' => array(
 				'integration' => true,
 				'recommended' => false,
@@ -270,7 +266,6 @@ class Epsilon_Dashboard_Setup {
 
 		if ( ! $integrated ) {
 			unset( $arr['contact-form-7'] );
-			unset( $arr['education'] );
 			unset( $arr['elementor'] );
 			unset( $arr['cmb2'] );
 			unset( $arr['one-click-demo-import'] );
@@ -301,21 +296,6 @@ class Epsilon_Dashboard_Setup {
 						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'installed', 'Contact Form 7', 'verify_cf7' ) ? __( 'Activate Plugin', 'education' ) : __( 'Install Plugin', 'education' ),
 						'type'    => 'handle-plugin',
 						'handler' => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'installed', 'Contact Form 7', 'verify_cf7' ),
-					),
-				),
-			),
-			array(
-				'id'          => 'education-check-ac',
-				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'education', 'title', 'Education Companion' ),
-				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'education', 'description', 'Education Companion' ),
-				'plugin_slug' => 'education',
-				'state'       => false,
-				'check'       => defined( 'EDUCATION_COMPANION_VERSION' ),
-				'actions'     => array(
-					array(
-						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'education', 'installed', 'Education Companion' ) ? __( 'Activate Plugin', 'education' ) : __( 'Install Plugin', 'education' ),
-						'type'    => 'handle-plugin',
-						'handler' => Epsilon_Init_Notify_System::plugin_verifier( 'education', 'installed', 'Education Companion' ),
 					),
 				),
 			),
@@ -388,13 +368,6 @@ class Epsilon_Dashboard_Setup {
 				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'description', 'Contact Form 7', 'verify_cf7' ),
 				'plugin_slug' => 'contact-form-7',
 				'check'       => defined( 'WPCF7_VERSION' ),
-			),
-			array(
-				'id'          => 'education-check-ac',
-				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'education', 'title', 'Education Companion' ),
-				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'education', 'description', 'Education Companion' ),
-				'plugin_slug' => 'education',
-				'check'       => defined( 'EDUCATION_COMPANION_VERSION' ),
 			),
 			array(
 				'id'          => 'education-check-elementor',

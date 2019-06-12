@@ -86,7 +86,13 @@ final class Education {
         add_theme_support( 'title-tag' );
         
         // support logo
-        add_theme_support( 'custom-logo' );
+        add_theme_support( 'custom-logo', array(
+            'height'      => 30,
+            'width'       => 150,
+            'flex-height' => true,
+            'flex-width'  => true,
+            'header-text' => array( 'site-title', 'site-description' ),
+        ) );
         
         //  support post format
         add_theme_support( 'post-formats', array( 'video','audio' ) );
@@ -106,12 +112,14 @@ final class Education {
 		) );
         
         // support custom header
-		add_theme_support(
-			'custom-header',
-			array(
-				'header-text' => false,
-			)
-		);
+		add_theme_support( 'custom-header', array(
+            'default-text-color' => '#fff',
+            'width'              => 1920,
+            'height'             => 400,
+            'flex-width'         => true,
+            'flex-height'        => true,
+            )
+        );
         
         // support automatic feed links
         add_theme_support( 'automatic-feed-links' );

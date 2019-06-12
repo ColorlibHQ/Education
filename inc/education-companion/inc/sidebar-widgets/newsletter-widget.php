@@ -1,7 +1,7 @@
 <?php
 /**
  * @version  1.0
- * @package  Repair
+ * @package  Education
  *
  */
  
@@ -10,18 +10,18 @@
 *Creating Newsletter Widget
 ***************************************/
  
-class repair_newsletter_widget extends WP_Widget {
+class education_newsletter_widget extends WP_Widget {
 
 
     function __construct() {
 
         parent::__construct(
         // Base ID of your widget
-        'repair_newsletter_widget',
+        'education_newsletter_widget',
 
 
         // Widget name will appear in UI
-        esc_html__( '[ Repair ] Newsletter Form', 'education' ),
+        esc_html__( '[ Education ] Newsletter Form', 'education' ),
 
         // Widget description
         array( 'description' => esc_html__( 'Add footer newsletter signup form.', 'education' ), )
@@ -131,11 +131,11 @@ class repair_newsletter_widget extends WP_Widget {
 
     }
 
-} // Class repair_newsletter_widget ends here
+} // Class education_newsletter_widget ends here
 
 
 // Register and load the widget
-function repair_newsletter_load_widget() {
-	register_widget( 'repair_newsletter_widget' );
+function education_newsletter_load_widget() {
+	register_widget( 'education_newsletter_widget' );
 }
-add_action( 'widgets_init', 'repair_newsletter_load_widget' );
+add_action( 'widgets_init', 'education_newsletter_load_widget' );

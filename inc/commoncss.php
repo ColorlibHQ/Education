@@ -66,7 +66,8 @@ function education_common_custom_css() {
 			.blog-posts-area .single-blog-post .primary-btn:hover,
 			.blog-pagination .page-item.active .page-link,
 			.blog-pagination .page-link:hover,
-			.search-widget form.search-form input[type=text],
+			.widget-wrap .search-widget form.search-form input[type=text],
+			.widget-wrap .search-widget form.search-form button,
 			.search-widget form.search-form button,
 			.single-sidebar-widget .popular-post-widget .popular-title,
 			.single-sidebar-widget .category-title,
@@ -82,6 +83,8 @@ function education_common_custom_css() {
 			.content--area .page-links a span:hover,
 			.tagcloud a:hover, 
 			.tags-widget ul li:hover,
+			.single-widget > h4,
+			.post-content-area .single-post .primary-btn:hover,
 			.global-banner {
 				background-color: {$themecolor};
 			}
@@ -116,20 +119,28 @@ function education_common_custom_css() {
 			.footer-area .copyright-text .footer-social a:hover,
 			.contact-page-area .form-area .primary-btn:hover,
 			.contact-page-area .single-contact-address .fa,
-			.blog-posts-area .single-blog-post .meta-details .tags li a:hover,
-			.blog-posts-area .single-blog-post .user-name a:hover, 
-			.blog-posts-area .single-blog-post .date a:hover, 
-			.blog-posts-area .single-blog-post .view a:hover, 
-			.blog-posts-area .single-blog-post .comments a:hover,
+			.blog-posts-area .single-post .meta-details .tags li a:hover,
 			.protfolio-widget .social-links li a:hover,
 			.single-widget ul li:hover p,
 			.single-blog-post .social-links li a:hover,
 			.single-blog-post .tags li:first-child:after,
 			.single-blog-post .tags li:hover a,
 			.single-blog-post .tags li:hover a,
-			.single-footer-widget ul li a:hover {
+			.single-footer-widget ul li a:hover,
+			.posts-list .posts-title h3:hover,
+			.post-content-area .single-post .user-name a:hover,
+			.post-content-area .single-post .date a:hover,
+			.post-content-area .single-post .view a:hover,
+			.post-content-area .single-post .comments a:hover,
+			.single-post-area .social-links li a:hover,
+			.single-sidebar-widget > ul > li:hover a,
+			.post-content-area .single-post .meta-details .tags li a:hover,
+			.comment-form .primary-btn:hover
+			{
 				color: {$themecolor};
 			}
+			.comment-form .primary-btn:hover,
+			.header-tagline,
 			.genric-btn.primary:hover,
 			.genric-btn.primary-border,
 			blockquote,

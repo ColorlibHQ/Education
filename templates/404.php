@@ -29,16 +29,9 @@ if( ! defined( 'ABSPATH' ) ) {
 
 						$wrongText = education_opt( 'education_fof_text_two', $wrongText );
 					
-						$anchor = education_anchor_tag(
-							array(
-								'url' 	 => esc_url( site_url( '/' ) ),
-								'text' 	 => esc_html__( 'Back To Home page', 'education' ),
-							)
-						);
-
 						echo education_paragraph_tag(
 							array(
-								'text' 	 => sprintf( '%s %s', esc_html( $wrongText ), wp_kses_post( $anchor )  ),
+								'text' 	 => sprintf( '%s', esc_html( $wrongText )  ),
 							)
 						);
 
@@ -48,6 +41,15 @@ if( ! defined( 'ABSPATH' ) ) {
 								<?php 
 									// Search Form
 									get_search_form();
+								
+									// Go Back Home Button
+									echo education_anchor_tag(
+										array(
+											'url' 	 => esc_url( site_url( '/' ) ),
+											'text' 	 => esc_html__( 'Back To Home page', 'education' ),
+											'class'	 => 'primary-btn mt-20'
+										)
+									);
 								?>
 							</div>
 						</div>

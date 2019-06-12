@@ -193,8 +193,9 @@ Epsilon_Customizer::add_field(
         'type'        => 'epsilon-toggle',
         'label'       => esc_html__( 'Toggle header overlay', 'education' ),
         'section'     => 'colors',
-        'sanitize_callback' => 'sanitize_text_field'
-    )
+        'sanitize_callback' => 'sanitize_text_field',
+        'default'     => 1
+        )
 );
 // Header overlay color
 Epsilon_Customizer::add_field(
@@ -226,6 +227,7 @@ Epsilon_Customizer::add_field(
 	array(
 		'type'        => 'text',
 		'label'       => esc_html__( 'Featured Post ID', 'education' ),
+		'description' => esc_html__( 'See post permalink here is like as "?p=10" or "?post=10" in link, the 10 is post ID', 'education' ),
 		'section'     => 'education_blog_options_section',
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'     => '',
@@ -408,7 +410,7 @@ Epsilon_Customizer::add_field(
 	'popular_course_section_title',
 	array(
 		'type'        => 'text',
-		'label'       => esc_html__( 'Popular Course Section Title', 'education' ),
+		'label'       => esc_html__( 'Related Post Section Title', 'education' ),
 		'section'     => 'education_course_options_section',
         'sanitize_callback' => 'sanitize_text_field',
         'default'     => esc_html__('Popular Courses we offer', 'education')
@@ -418,7 +420,7 @@ Epsilon_Customizer::add_field(
 	'popular_course_section_subtitle',
 	array(
 		'type'        => 'text',
-		'label'       => esc_html__( 'Popular Course Section Sub-title', 'education' ),
+		'label'       => esc_html__( 'Related Post Section Sub-title', 'education' ),
 		'section'     => 'education_course_options_section',
         'sanitize_callback' => 'sanitize_text_field',
         'default'     => esc_html__('There is a moment in the life of any aspiring.', 'education')
@@ -428,7 +430,7 @@ Epsilon_Customizer::add_field(
 	'popular_course_post_number',
 	array(
 		'type'        => 'number',
-		'label'       => esc_html__( 'Popular Course show number', 'education' ),
+		'label'       => esc_html__( 'Related Post show number', 'education' ),
 		'section'     => 'education_course_options_section',
         'sanitize_callback' => 'sanitize_text_field',
         'default'     => absint('4')

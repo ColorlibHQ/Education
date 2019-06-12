@@ -8,7 +8,7 @@ $copyText = sprintf( __( 'Theme by %s colorlib %s Copyright &copy; %s  |  All ri
 <div class="copyright-text">
     <div class="container">
         <div class="row footer-bottom d-flex justify-content-between">
-            <p class="col-lg-8 col-sm-6 footer-text m-0"><?php echo wp_kses_post( education_opt( 'education-copyright-text-settings', $copyText ) ); ?></p>
+            <p class="col-lg-12 text-center col-sm-6 footer-text m-0"><?php echo wp_kses_post( education_opt( 'education-copyright-text-settings', $copyText ) ); ?></p>
             <?php
             if( has_nav_menu( 'social-menu' ) ) {
                 echo '<div class="col-lg-4 col-sm-6">';
