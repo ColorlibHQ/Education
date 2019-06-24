@@ -71,6 +71,14 @@ if( ! defined( 'EDUCATION_DIR_PATH_WIDGET' ) ) {
 
 
 
+// Admin Enqueue script
+function education_admin_script(){
+    wp_enqueue_style( 'education-admin', get_template_directory_uri().'/assets/css/education_admin.css', false, '1.0.0' );
+    wp_enqueue_script( 'education_admin', get_template_directory_uri().'/assets/js/education_admin.js', false, '1.0.0' );
+}
+add_action( 'admin_enqueue_scripts', 'education_admin_script' );
+
+
 
 /**
  * Include File
